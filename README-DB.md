@@ -25,13 +25,33 @@ pnpm install
 pnpm approve-builds
 ```
 
-This tutorial also requires a `PostgreSQL` database. We can use the [pf-db](https://github.com/fullstack-69/pf-db.git) project.
+This tutorial also requires a `PostgreSQL` database. We can use the [pf-db](https://github.com/fullstack-69/pf-db.git) project to initialize a PostgreSQL container.
 
-![todo table](./img/db1.png)
+This project also includes `compose-postgres.yml`, a compose file for initializing PostgreSQL database container. Before activate the compose file, make sure to edit `.env` file to set all necessary variables.
+
+```bash
+# Backend application port
+PORT=3000
+
+# Notice that we do not need superuser credential anymore.
+POSTGRES_PASSWORD=
+POSTGRES_USER=postgres
+POSTGRES_DB=mydb
+POSTGRES_PORT=5432
+POSTGRES_HOST=localhost
+POSTGRES_APP_USER=
+POSTGRES_APP_PASSWORD=
+
+# Database encryption
+# https://generate-random.org/encryption-keys
+DB_ENCRYPTION_KEY=05dcc5d17d405187d2934bd1fade54e69c3a5fbfae0a398ff49ad8e05429e784
+```
 
 ---
 
 ## One-to-Many Relationship with Drizzle
+
+From the `pf-backend` project, we will modify our database as following:
 
 ![more tables](./img/db2.png)
 
