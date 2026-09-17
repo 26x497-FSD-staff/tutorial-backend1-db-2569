@@ -47,6 +47,12 @@ POSTGRES_APP_PASSWORD=
 DB_ENCRYPTION_KEY=05dcc5d17d405187d2934bd1fade54e69c3a5fbfae0a398ff49ad8e05429e784
 ```
 
+After that, we can start our PostgreSQL container with this command.
+
+```bash
+docker compose -f compose-postgres.yml up -d
+```
+
 ---
 
 ## One-to-Many Relationship with Drizzle
